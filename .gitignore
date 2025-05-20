@@ -48,9 +48,6 @@ obj/
 docs/html/
 docs/latex/
 
-# Unity framework
-unity/
-
 # macOS system files
 .DS_Store
 .AppleDouble
@@ -59,4 +56,4 @@ unity/
 # Vim swap files
 *.swp
 *.swo
-*~
+*~ 
