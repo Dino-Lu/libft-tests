@@ -15,7 +15,7 @@ TEST_OBJ = $(addprefix $(OBJ_DIR)/, $(TEST_SRC:.c=.o))
 TEST_NAME = test_libft
 
 # Unity framework files
-UNITY_SRC = $(UNITY_DIR)/src/unity.c
+UNITY_SRC = $(UNITY_DIR)/unity.c
 UNITY_OBJ = $(addprefix $(OBJ_DIR)/, $(notdir $(UNITY_SRC:.c=.o)))
 
 # Library
@@ -40,11 +40,11 @@ $(TEST_NAME): $(TEST_OBJ) $(UNITY_OBJ) $(LIBFT)
 
 $(OBJ_DIR)/%.o: %.c
 	@echo "$(YELLOW)Compiling $<...$(NC)"
-	@$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(UNITY_DIR)/src -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(UNITY_DIR) -c $< -o $@
 
-$(OBJ_DIR)/%.o: $(UNITY_DIR)/src/%.c
+$(OBJ_DIR)/%.o: $(UNITY_DIR)/%.c
 	@echo "$(YELLOW)Compiling $<...$(NC)"
-	@$(CC) $(CFLAGS) -I$(UNITY_DIR)/src -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(UNITY_DIR) -c $< -o $@
 
 $(LIBFT):
 	@echo "$(YELLOW)Building libft...$(NC)"
