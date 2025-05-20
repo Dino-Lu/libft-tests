@@ -56,6 +56,16 @@ test: $(TEST_NAME)
 	@echo "$(YELLOW)Running tests...$(NC)"
 	@./$(TEST_NAME)
 
+# Documentation
+docs:
+	@echo "$(YELLOW)Generating documentation...$(NC)"
+	@doxygen Doxyfile
+	@echo "$(GREEN)Documentation generated in docs/html/index.html$(NC)"
+
+view-docs: docs
+	@echo "$(YELLOW)Opening documentation...$(NC)"
+	@./open_docs.sh
+
 # Debug build
 debug: CFLAGS += $(DEBUG_FLAGS)
 debug: fclean all
@@ -80,13 +90,15 @@ re: fclean all
 # Help
 help:
 	@echo "$(YELLOW)Available targets:$(NC)"
-	@echo "  all      - Build the test executable"
-	@echo "  test     - Run the tests"
-	@echo "  debug    - Build with debug flags"
-	@echo "  release  - Build with optimization flags"
-	@echo "  clean    - Remove object files"
-	@echo "  fclean   - Remove all generated files"
-	@echo "  re       - Rebuild everything"
-	@echo "  help     - Show this help message"
+	@echo "  all       - Build the test executable"
+	@echo "  test      - Run the tests"
+	@echo "  docs      - Generate documentation"
+	@echo "  view-docs - Generate and open documentation"
+	@echo "  debug     - Build with debug flags"
+	@echo "  release   - Build with optimization flags"
+	@echo "  clean     - Remove object files"
+	@echo "  fclean    - Remove all generated files"
+	@echo "  re        - Rebuild everything"
+	@echo "  help      - Show this help message"
 
-.PHONY: all clean fclean re test debug release help 
+.PHONY: all clean fclean re test debug release help docs view-docs 
