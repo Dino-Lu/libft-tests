@@ -1,0 +1,67 @@
+name: Libft Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install dependencies (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make valgrind
+    
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install valgrind
+    
+    - name: Build and test
+      run: |
+        cd libft_tests
+        make
+        make test
+    
+    - name: Check for memory leaks (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        cd libft_tests
+        valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./test_libft
+        if grep -q "definitely lost: [1-9]" valgrind-out.txt; then
+          echo "Memory leaks detected!"
+          cat valgrind-out.txt
+          exit 1
+        fi
+    
+    - name: Check for memory leaks (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        cd libft_tests
+        leaks --atExit -- ./test_libft > leaks-out.txt 2>&1
+        if grep -q "leaks for" leaks-out.txt; then
+          echo "Memory leaks detected!"
+          cat leaks-out.txt
+          exit 1
+        fi
+    
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results-${{ matrix.os }}
+        path: |
+          libft_tests/valgrind-out.txt
+          libft_tests/leaks-out.txt
+        if-no-files-found: warn 
