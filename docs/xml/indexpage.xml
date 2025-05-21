@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Libft Test Suite</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="index_1md__r_e_a_d_m_e"/></para>
+<para>A comprehensive test suite for the 42 School&apos;s Libft project, built with the Unity testing framework.</para>
+<para><ulink url="https://github.com/Dino-Lu/libft-tests/actions"><image type="html" name="https://img.shields.io/github/actions/workflow/status/Dino-Lu/libft-tests/test.yml?branch=main" alt="GitHub Actions" inline="yes"></image>
+</ulink> <ulink url="https://opensource.org/licenses/MIT"><image type="html" name="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" inline="yes"></image>
+</ulink></para>
+<sect1 id="index_1autotoc_md1">
+<title>Table of Contents</title><para><itemizedlist>
+<listitem><para>Features</para>
+</listitem><listitem><para>Test Coverage</para>
+</listitem><listitem><para>Installation</para>
+</listitem><listitem><para>Usage</para>
+</listitem><listitem><para>Documentation</para>
+</listitem><listitem><para>Contributing</para>
+</listitem><listitem><para>Version History</para>
+</listitem><listitem><para>License</para>
+</listitem><listitem><para>Acknowledgments</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md2">
+<title>Features</title><sect2 id="index_1autotoc_md3">
+<title>Core Features</title><para><itemizedlist>
+<listitem><para>🧪 Comprehensive test coverage for all libft functions</para>
+</listitem><listitem><para>🔍 Memory leak detection with detailed reports</para>
+</listitem><listitem><para>⚡ Performance testing and benchmarking</para>
+</listitem><listitem><para>📊 Detailed test reporting with color-coded output</para>
+</listitem><listitem><para>🔄 Automated testing with GitHub Actions</para>
+</listitem><listitem><para>📚 Complete documentation and examples</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md4">
+<title>Testing Capabilities</title><para><itemizedlist>
+<listitem><para>Unit tests for all mandatory and bonus functions</para>
+</listitem><listitem><para>Edge case testing and error handling</para>
+</listitem><listitem><para>Memory management verification</para>
+</listitem><listitem><para>Performance benchmarking</para>
+</listitem><listitem><para>Memory leak detection</para>
+</listitem><listitem><para>Automated test execution</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md5">
+<title>Test Coverage</title><sect2 id="index_1autotoc_md6">
+<title>Mandatory Part</title><para><itemizedlist>
+<listitem><para>Character Functions<itemizedlist>
+<listitem><para><computeroutput>ft_isalpha</computeroutput>, <computeroutput>ft_isdigit</computeroutput>, <computeroutput>ft_isalnum</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_isascii</computeroutput>, <computeroutput>ft_isprint</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_toupper</computeroutput>, <computeroutput>ft_tolower</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>String Functions<itemizedlist>
+<listitem><para><computeroutput>ft_strlen</computeroutput>, <computeroutput>ft_strlcpy</computeroutput>, <computeroutput>ft_strlcat</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_strchr</computeroutput>, <computeroutput>ft_strrchr</computeroutput>, <computeroutput>ft_strncmp</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_strnstr</computeroutput>, <computeroutput>ft_strdup</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Memory Functions<itemizedlist>
+<listitem><para><computeroutput>ft_memset</computeroutput>, <computeroutput>ft_bzero</computeroutput>, <computeroutput>ft_memcpy</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_memmove</computeroutput>, <computeroutput>ft_memchr</computeroutput>, <computeroutput>ft_memcmp</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_calloc</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Additional Functions<itemizedlist>
+<listitem><para><computeroutput>ft_atoi</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_substr</computeroutput>, <computeroutput>ft_strjoin</computeroutput>, <computeroutput>ft_strtrim</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_split</computeroutput>, <computeroutput>ft_itoa</computeroutput></para>
+</listitem><listitem><para><computeroutput>ft_strmapi</computeroutput>, <computeroutput>ft_striteri</computeroutput></para>
+</listitem><listitem><para>File descriptor functions</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md7">
+<title>Bonus Part</title><para><itemizedlist>
+<listitem><para>List Manipulation Functions<itemizedlist>
+<listitem><para><computeroutput>ft_lstnew</computeroutput>: Node creation and initialization</para>
+</listitem><listitem><para><computeroutput>ft_lstadd_front</computeroutput>: Adding nodes to list front</para>
+</listitem><listitem><para><computeroutput>ft_lstsize</computeroutput>: List size calculation</para>
+</listitem><listitem><para><computeroutput>ft_lstlast</computeroutput>: Finding last node</para>
+</listitem><listitem><para><computeroutput>ft_lstadd_back</computeroutput>: Adding nodes to list end</para>
+</listitem><listitem><para><computeroutput>ft_lstdelone</computeroutput>: Single node deletion</para>
+</listitem><listitem><para><computeroutput>ft_lstclear</computeroutput>: Complete list clearing</para>
+</listitem><listitem><para><computeroutput>ft_lstiter</computeroutput>: List iteration</para>
+</listitem><listitem><para><computeroutput>ft_lstmap</computeroutput>: List transformation</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md8">
+<title>Installation</title><sect2 id="index_1autotoc_md9">
+<title>Prerequisites</title><para><itemizedlist>
+<listitem><para>GCC compiler</para>
+</listitem><listitem><para>Make</para>
+</listitem><listitem><para>Git</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md10">
+<title>Project Structure</title><para><programlisting><codeline><highlight class="normal">xxxxxxxxx/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Parent<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Libft/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Your<sp/>libft<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>libft.h</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>libft.a</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>ft_*.c<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>libft_tests/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>This<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>unity/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Unity<sp/>testing<sp/>framework</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>test_libft.c<sp/><sp/><sp/><sp/>#<sp/>Main<sp/>test<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>Makefile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Build<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>README.md<sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>This<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>testing_guide.md<sp/>#<sp/>Testing<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>└──<sp/>docs/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Additional<sp/>documentation</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="index_1autotoc_md11">
+<title>Installation Steps</title><para><orderedlist>
+<listitem><para>Clone the repository: <programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>From<sp/>your<sp/>parent<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/Dino-Lu/libft-tests.git<sp/>libft_tests</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Verify the Makefile configuration:<itemizedlist>
+<listitem><para>Open <computeroutput>libft_tests/Makefile</computeroutput></para>
+</listitem><listitem><para>Ensure <computeroutput>LIBFT_DIR = ../Libft</computeroutput> points to your libft directory</para>
+</listitem><listitem><para>Default configuration should work if cloned into <computeroutput>libft_tests</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md12">
+<title>Usage</title><sect2 id="index_1autotoc_md13">
+<title>Running Tests</title><para><programlisting filename=".bash"><codeline><highlight class="normal">cd<sp/>libft_tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Build<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>mandatory<sp/>tests<sp/>only</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>tests<sp/>(mandatory<sp/>+<sp/>bonus)</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>bonus</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Clean<sp/>build<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>clean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Clean<sp/>everything</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>fclean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Rebuild<sp/>everything</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>re</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="index_1autotoc_md14">
+<title>Test Output</title><para><itemizedlist>
+<listitem><para>Green ✓ indicates passed tests</para>
+</listitem><listitem><para>Red ✗ indicates failed tests</para>
+</listitem><listitem><para>Detailed error messages for failed tests</para>
+</listitem><listitem><para>Memory leak reports</para>
+</listitem><listitem><para>Performance metrics</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md15">
+<title>Documentation</title><sect2 id="index_1autotoc_md16">
+<title>Available Documentation</title><para><itemizedlist>
+<listitem><para><ulink url="docs/html/index.html">Full Documentation</ulink> - Complete function documentation</para>
+</listitem><listitem><para><ref refid="dc/d9c/md_testing__guide" kindref="compound">Testing Guide</ref> - How to write and run tests</para>
+</listitem><listitem><para><ulink url=".github/workflows/test.yml">GitHub Actions</ulink> - CI/CD configuration</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md17">
+<title>Documentation Structure</title><para><itemizedlist>
+<listitem><para>Function specifications</para>
+</listitem><listitem><para>Test case examples</para>
+</listitem><listitem><para>Memory management guidelines</para>
+</listitem><listitem><para>Performance considerations</para>
+</listitem><listitem><para>Best practices</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md18">
+<title>Contributing</title><sect2 id="index_1autotoc_md19">
+<title>How to Contribute</title><para><orderedlist>
+<listitem><para>Fork the repository</para>
+</listitem><listitem><para>Create a feature branch (<computeroutput>git checkout -b feature/amazing-feature</computeroutput>)</para>
+</listitem><listitem><para>Commit your changes (<lsquo/>git commit -m &apos;Add amazing feature<rsquo/><computeroutput>)</computeroutput></para>
+</listitem><listitem><para><computeroutput>Push to the branch (</computeroutput>git push origin feature/amazing-feature`)</para>
+</listitem><listitem><para>Open a Pull Request</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md20">
+<title>Contribution Guidelines</title><para><itemizedlist>
+<listitem><para>Follow existing code style</para>
+</listitem><listitem><para>Add tests for new features</para>
+</listitem><listitem><para>Update documentation</para>
+</listitem><listitem><para>Ensure all tests pass</para>
+</listitem><listitem><para>Check for memory leaks</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md21">
+<title>Version History</title><sect2 id="index_1autotoc_md22">
+<title>v1.0.0</title><para><itemizedlist>
+<listitem><para>Initial release</para>
+</listitem><listitem><para>Mandatory part test coverage</para>
+</listitem><listitem><para>Basic documentation</para>
+</listitem><listitem><para>GitHub Actions integration</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md23">
+<title>v1.1.0 (Current)</title><para><itemizedlist>
+<listitem><para>Added bonus part test coverage</para>
+</listitem><listitem><para>Enhanced list function tests</para>
+</listitem><listitem><para>Improved memory leak detection</para>
+</listitem><listitem><para>New test targets (test/bonus)</para>
+</listitem><listitem><para>Comprehensive documentation</para>
+</listitem><listitem><para>Better test organization</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md24">
+<title>License</title><para>This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.</para>
+</sect1>
+<sect1 id="index_1autotoc_md25">
+<title>Acknowledgments</title><para><itemizedlist>
+<listitem><para><ulink url="https://github.com/ThrowTheSwitch/Unity">Unity Testing Framework</ulink></para>
+</listitem><listitem><para><ulink url="https://github.com/42Berlin">42 School</ulink></para>
+</listitem><listitem><para>All contributors who have helped improve this test suite</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md26">
+<title>Star History</title><para><ulink url="https://star-history.com/#Dino-Lu/libft-tests&amp;Date"><image type="html" name="https://api.star-history.com/svg?repos=Dino-Lu/libft-tests&amp;type=Date" alt="Star History Chart" inline="yes"></image>
+</ulink></para>
+<para><hruler/>
+</para>
+<para>If you find this test suite helpful, please consider giving it a ⭐️ on GitHub! </para>
+</sect1>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

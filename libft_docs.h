@@ -816,4 +816,153 @@ int ft_toupper(int c);
  */
 int ft_tolower(int c);
 
+/**
+ * @brief Creates a new list element.
+ *
+ * @param content The content to be stored in the new element.
+ * @return t_list* A pointer to the new element, or NULL if allocation fails.
+ *
+ * @code
+ * t_list *new_node = ft_lstnew("Hello");
+ * if (new_node) {
+ *     // Use new_node
+ *     free(new_node->content);
+ *     free(new_node);
+ * }
+ * @endcode
+ *
+ * @note Memory for both the element and its content is allocated.
+ */
+t_list *ft_lstnew(void *content);
+
+/**
+ * @brief Adds a new element at the beginning of the list.
+ *
+ * @param lst A pointer to the first element of the list.
+ * @param new The new element to add.
+ *
+ * @code
+ * t_list *list = NULL;
+ * t_list *new_node = ft_lstnew("Hello");
+ * ft_lstadd_front(&list, new_node);
+ * @endcode
+ *
+ * @note The new element becomes the first element of the list.
+ */
+void ft_lstadd_front(t_list **lst, t_list *new);
+
+/**
+ * @brief Counts the number of elements in a list.
+ *
+ * @param lst The beginning of the list.
+ * @return int The number of elements in the list.
+ *
+ * @code
+ * t_list *list = NULL;
+ * // Add elements to list
+ * int size = ft_lstsize(list);
+ * @endcode
+ *
+ * @note Returns 0 if the list is empty.
+ */
+int ft_lstsize(t_list *lst);
+
+/**
+ * @brief Returns the last element of the list.
+ *
+ * @param lst The beginning of the list.
+ * @return t_list* A pointer to the last element, or NULL if the list is empty.
+ *
+ * @code
+ * t_list *list = NULL;
+ * // Add elements to list
+ * t_list *last = ft_lstlast(list);
+ * @endcode
+ *
+ * @note Returns NULL if the list is empty.
+ */
+t_list *ft_lstlast(t_list *lst);
+
+/**
+ * @brief Adds a new element at the end of the list.
+ *
+ * @param lst A pointer to the first element of the list.
+ * @param new The new element to add.
+ *
+ * @code
+ * t_list *list = NULL;
+ * t_list *new_node = ft_lstnew("Hello");
+ * ft_lstadd_back(&list, new_node);
+ * @endcode
+ *
+ * @note The new element becomes the last element of the list.
+ */
+void ft_lstadd_back(t_list **lst, t_list *new);
+
+/**
+ * @brief Deletes a single element from the list.
+ *
+ * @param lst The element to delete.
+ * @param del A function to free the content of the element.
+ *
+ * @code
+ * t_list *list = NULL;
+ * // Add elements to list
+ * ft_lstdelone(list, free);
+ * @endcode
+ *
+ * @note The content of the element is freed using the del function.
+ */
+void ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief Deletes and frees the entire list.
+ *
+ * @param lst A pointer to the first element of the list.
+ * @param del A function to free the content of each element.
+ *
+ * @code
+ * t_list *list = NULL;
+ * // Add elements to list
+ * ft_lstclear(&list, free);
+ * @endcode
+ *
+ * @note The content of each element is freed using the del function.
+ */
+void ft_lstclear(t_list **lst, void (*del)(void *));
+
+/**
+ * @brief Iterates through the list and applies a function to each element.
+ *
+ * @param lst The beginning of the list.
+ * @param f A function to apply to each element.
+ *
+ * @code
+ * t_list *list = NULL;
+ * // Add elements to list
+ * ft_lstiter(list, print_content);
+ * @endcode
+ *
+ * @note The function f is applied to the content of each element.
+ */
+void ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @brief Creates a new list resulting from applying a function to each element.
+ *
+ * @param lst The beginning of the list.
+ * @param f A function to apply to each element.
+ * @param del A function to free the content of an element if allocation fails.
+ * @return t_list* A pointer to the new list, or NULL if allocation fails.
+ *
+ * @code
+ * t_list *list = NULL;
+ * // Add elements to list
+ * t_list *new_list = ft_lstmap(list, duplicate_content, free);
+ * @endcode
+ *
+ * @note The content of each element is duplicated using the function f.
+ */
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 #endif 

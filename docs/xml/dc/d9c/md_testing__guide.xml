@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d9c/md_testing__guide" kind="page">
+    <compoundname>md_testing__guide</compoundname>
+    <title>Building Unit Tests for libft</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="dc/d9c/md_testing__guide_1autotoc_md28"/></para>
+<para>This guide explains how to create and run unit tests for the libft library using the Unity testing framework.</para>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md29">
+<title>Table of Contents</title><para><itemizedlist>
+<listitem><para>Prerequisites</para>
+</listitem><listitem><para>Project Structure</para>
+</listitem><listitem><para>Getting Started</para>
+</listitem><listitem><para>Writing Tests</para>
+</listitem><listitem><para>Test Categories</para>
+</listitem><listitem><para>Best Practices</para>
+</listitem><listitem><para>Debugging</para>
+</listitem><listitem><para>Common Issues</para>
+</listitem><listitem><para>Resources</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md30">
+<title>Prerequisites</title><para><itemizedlist>
+<listitem><para>GCC compiler (version 4.2.1 or higher)</para>
+</listitem><listitem><para>Make (version 3.81 or higher)</para>
+</listitem><listitem><para>Unity testing framework (included in this project)</para>
+</listitem><listitem><para>Basic understanding of C programming</para>
+</listitem><listitem><para>Familiarity with libft functions</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md31">
+<title>Project Structure</title><para><programlisting><codeline><highlight class="normal">libft_tests/</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>unity/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Unity<sp/>testing<sp/>framework</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>test_libft.c<sp/><sp/><sp/><sp/><sp/>#<sp/>Main<sp/>test<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Makefile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Build<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>libft_docs.h<sp/><sp/><sp/><sp/><sp/>#<sp/>Function<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>testing_guide.md<sp/>#<sp/>This<sp/>guide</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>docs/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Additional<sp/>documentation</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md32">
+<title>Getting Started</title><para><orderedlist>
+<listitem><para><bold>Setup Your Environment</bold> <programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>Clone<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/Dino-Lu/libft-tests.git<sp/>libft_tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Navigate<sp/>to<sp/>the<sp/>test<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>libft_tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Build<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para><bold>Basic Test Structure</bold> <programlisting filename=".c"><codeline><highlight class="preprocessor">#include<sp/>&quot;unity.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Libft/libft.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1a95c834d6178047ce9e1bce7cbfea2836" kindref="member">setUp</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>code<sp/>(runs<sp/>before<sp/>each<sp/>test)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1a9909011e5fea0c018842eec4d93d0662" kindref="member">tearDown</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cleanup<sp/>code<sp/>(runs<sp/>after<sp/>each<sp/>test)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_function_name(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test<sp/>implementation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1a840291bc02cba5474a4cb46a9b9566fe" kindref="member">main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UNITY_BEGIN();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>RUN_TEST(test_function_name);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>UNITY_END();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md33">
+<title>Writing Tests</title><sect2 id="dc/d9c/md_testing__guide_1autotoc_md34">
+<title>1. Test Function Structure</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_function_name_scenario(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arrange:<sp/>Set<sp/>up<sp/>test<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*input<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Act:<sp/>Call<sp/>the<sp/>function<sp/>being<sp/>tested</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*result<sp/>=<sp/><ref refid="db/d79/libft__docs_8h_1a2ac2079a4250507c9af75d696f2ae476" kindref="member">ft_strdup</ref>(input);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assert:<sp/>Verify<sp/>the<sp/>results</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_NOT_NULL(result);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL_STRING(input,<sp/>result);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cleanup:<sp/>Free<sp/>allocated<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>free(result);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md35">
+<title>2. Available Assertions</title><para><programlisting filename=".c"><codeline><highlight class="comment">//<sp/>Basic<sp/>assertions</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL(expected,<sp/>actual);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_STRING(expected,<sp/>actual);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_NULL(pointer);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_NOT_NULL(pointer);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_TRUE(condition);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_FALSE(condition);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Memory<sp/>assertions</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MEMORY(expected,<sp/>actual,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MEMORY_ARRAY(expected,<sp/>actual,<sp/>element_size,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>String<sp/>assertions</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_STRING_LEN(expected,<sp/>actual,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_STRING_ARRAY(expected,<sp/>actual,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Custom<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MESSAGE(expected,<sp/>actual,<sp/></highlight><highlight class="stringliteral">&quot;Custom<sp/>error<sp/>message&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md36">
+<title>Test Categories</title><sect2 id="dc/d9c/md_testing__guide_1autotoc_md37">
+<title>1. Character Functions</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1aefd5a0ec59a0f0de0b5289a9cd9b2d41" kindref="member">test_isalpha</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_TRUE(<ref refid="db/d79/libft__docs_8h_1ac283963beaa3b8c7d09b78851cda297e" kindref="member">ft_isalpha</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_TRUE(<ref refid="db/d79/libft__docs_8h_1ac283963beaa3b8c7d09b78851cda297e" kindref="member">ft_isalpha</ref>(</highlight><highlight class="charliteral">&apos;z&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_FALSE(<ref refid="db/d79/libft__docs_8h_1ac283963beaa3b8c7d09b78851cda297e" kindref="member">ft_isalpha</ref>(</highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_FALSE(<ref refid="db/d79/libft__docs_8h_1ac283963beaa3b8c7d09b78851cda297e" kindref="member">ft_isalpha</ref>(</highlight><highlight class="charliteral">&apos;@&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md38">
+<title>2. String Functions</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1ab6533a2d0860e9f95bf8a8bc5ac50cd6" kindref="member">test_strlen</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(5,<sp/><ref refid="db/d79/libft__docs_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(</highlight><highlight class="stringliteral">&quot;Hello&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(0,<sp/><ref refid="db/d79/libft__docs_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(1,<sp/><ref refid="db/d79/libft__docs_8h_1abbb8c6c4ed85d892e7f1509f65f5768a" kindref="member">ft_strlen</ref>(</highlight><highlight class="stringliteral">&quot;A&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md39">
+<title>3. Memory Functions</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1ae1b87c5afaaea495ddaf760e45cfcc31" kindref="member">test_memset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[10];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d79/libft__docs_8h_1a19d0a16cec67fe4c1af22f1571f4f8a6" kindref="member">ft_memset</ref>(buffer,<sp/></highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>5);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>buffer[i]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">,<sp/>buffer[5]);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md40">
+<title>4. List Functions (Bonus)</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d79/test__libft_8c_1a5d0832d96a4d284dfff3806d3c3c32c0" kindref="member">test_lstnew</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_list<sp/>*node<sp/>=<sp/><ref refid="db/d79/libft__docs_8h_1a8fe4ea6f56f5a2a75ee13d97416b60ed" kindref="member">ft_lstnew</ref>(content);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_NOT_NULL(node);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL_PTR(content,<sp/>node-&gt;content);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_NULL(node-&gt;next);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>free(node);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md41">
+<title>Best Practices</title><sect2 id="dc/d9c/md_testing__guide_1autotoc_md42">
+<title>1. Test Organization</title><para><itemizedlist>
+<listitem><para>Group related tests together</para>
+</listitem><listitem><para>Use descriptive test names</para>
+</listitem><listitem><para>Follow the pattern: <computeroutput>test_function_name_scenario</computeroutput></para>
+</listitem><listitem><para>Include edge cases and error conditions</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md43">
+<title>2. Memory Management</title><para><itemizedlist>
+<listitem><para>Always free allocated memory</para>
+</listitem><listitem><para>Use <computeroutput>setUp</computeroutput> and <computeroutput>tearDown</computeroutput> for common operations</para>
+</listitem><listitem><para>Check for memory leaks using <computeroutput>valgrind</computeroutput></para>
+</listitem><listitem><para>Handle allocation failures</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md44">
+<title>3. Edge Cases</title><para><itemizedlist>
+<listitem><para>NULL pointers</para>
+</listitem><listitem><para>Empty strings</para>
+</listitem><listitem><para>Boundary values</para>
+</listitem><listitem><para>Invalid inputs</para>
+</listitem><listitem><para>Memory limits</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md45">
+<title>4. Performance Considerations</title><para><itemizedlist>
+<listitem><para>Keep tests focused and fast</para>
+</listitem><listitem><para>Avoid unnecessary setup/teardown</para>
+</listitem><listitem><para>Use appropriate assertions</para>
+</listitem><listitem><para>Consider test execution time</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md46">
+<title>Debugging</title><sect2 id="dc/d9c/md_testing__guide_1autotoc_md47">
+<title>1. Using Print Statements</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_function(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Debug:<sp/>Input:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>input);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Debug:<sp/>Result:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md48">
+<title>2. Using Unity&apos;s Debug Features</title><para><programlisting filename=".c"><codeline><highlight class="comment">//<sp/>Enable<sp/>verbose<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNITY_INCLUDE_DOUBLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNITY_DOUBLE_PRECISION<sp/>1e-12</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>custom<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MESSAGE(expected,<sp/>actual,<sp/></highlight><highlight class="stringliteral">&quot;Detailed<sp/>error<sp/>message&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md49">
+<title>3. Using Valgrind</title><para><programlisting filename=".bash"><codeline><highlight class="normal">valgrind<sp/>--leak-check=full<sp/>./test_libft</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md50">
+<title>Common Issues</title><sect2 id="dc/d9c/md_testing__guide_1autotoc_md51">
+<title>1. Segmentation Faults</title><para><itemizedlist>
+<listitem><para>Check NULL pointer dereferences</para>
+</listitem><listitem><para>Verify memory allocation</para>
+</listitem><listitem><para>Ensure proper string termination</para>
+</listitem><listitem><para>Check array bounds</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md52">
+<title>2. Memory Leaks</title><para><itemizedlist>
+<listitem><para>Use <computeroutput>valgrind</computeroutput> to detect leaks</para>
+</listitem><listitem><para>Free all allocated memory</para>
+</listitem><listitem><para>Check cleanup in error cases</para>
+</listitem><listitem><para>Verify list operations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="dc/d9c/md_testing__guide_1autotoc_md53">
+<title>3. Test Failures</title><para><itemizedlist>
+<listitem><para>Compare expected vs actual values</para>
+</listitem><listitem><para>Check edge cases</para>
+</listitem><listitem><para>Review function documentation</para>
+</listitem><listitem><para>Verify test assumptions</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="dc/d9c/md_testing__guide_1autotoc_md54">
+<title>Resources</title><para><itemizedlist>
+<listitem><para><ulink url="https://github.com/ThrowTheSwitch/Unity">Unity Documentation</ulink></para>
+</listitem><listitem><para><ulink url="docs/html/index.html">libft Documentation</ulink></para>
+</listitem><listitem><para><ulink url="https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md">C Unit Testing Best Practices</ulink></para>
+</listitem><listitem><para><ulink url="https://valgrind.org/docs/manual/manual.html">Valgrind Documentation</ulink> </para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="testing_guide.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d9/dd6/_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Libft<sp/>Test<sp/>Suite</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>comprehensive<sp/>test<sp/>suite<sp/>for<sp/>the<sp/>42<sp/>School&apos;s<sp/>Libft<sp/>project,<sp/>built<sp/>with<sp/>the<sp/>Unity<sp/>testing<sp/>framework.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![GitHub<sp/>Actions](https://img.shields.io/github/actions/workflow/status/Dino-Lu/libft-tests/test.yml?branch=main)](https://github.com/Dino-Lu/libft-tests/actions)</highlight></codeline>
+<codeline><highlight class="normal">[![License:<sp/>MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Table<sp/>of<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Features](#features)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Test<sp/>Coverage](#test-coverage)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Installation](#installation)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Usage](#usage)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Documentation](#documentation)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Contributing](#contributing)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Version<sp/>History](#version-history)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[License](#license)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Acknowledgments](#acknowledgments)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Core<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>🧪<sp/>Comprehensive<sp/>test<sp/>coverage<sp/>for<sp/>all<sp/>libft<sp/>functions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>🔍<sp/>Memory<sp/>leak<sp/>detection<sp/>with<sp/>detailed<sp/>reports</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>⚡<sp/>Performance<sp/>testing<sp/>and<sp/>benchmarking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>📊<sp/>Detailed<sp/>test<sp/>reporting<sp/>with<sp/>color-coded<sp/>output</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>🔄<sp/>Automated<sp/>testing<sp/>with<sp/>GitHub<sp/>Actions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>📚<sp/>Complete<sp/>documentation<sp/>and<sp/>examples</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Testing<sp/>Capabilities</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unit<sp/>tests<sp/>for<sp/>all<sp/>mandatory<sp/>and<sp/>bonus<sp/>functions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Edge<sp/>case<sp/>testing<sp/>and<sp/>error<sp/>handling</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>management<sp/>verification</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Performance<sp/>benchmarking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>leak<sp/>detection</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Automated<sp/>test<sp/>execution</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Test<sp/>Coverage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Mandatory<sp/>Part</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Character<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_isalpha`,<sp/>`ft_isdigit`,<sp/>`ft_isalnum`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_isascii`,<sp/>`ft_isprint`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_toupper`,<sp/>`ft_tolower`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>String<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_strlen`,<sp/>`ft_strlcpy`,<sp/>`ft_strlcat`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_strchr`,<sp/>`ft_strrchr`,<sp/>`ft_strncmp`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_strnstr`,<sp/>`ft_strdup`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_memset`,<sp/>`ft_bzero`,<sp/>`ft_memcpy`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_memmove`,<sp/>`ft_memchr`,<sp/>`ft_memcmp`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_calloc`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Additional<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_atoi`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_substr`,<sp/>`ft_strjoin`,<sp/>`ft_strtrim`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_split`,<sp/>`ft_itoa`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_strmapi`,<sp/>`ft_striteri`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>File<sp/>descriptor<sp/>functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Bonus<sp/>Part</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>List<sp/>Manipulation<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstnew`:<sp/>Node<sp/>creation<sp/>and<sp/>initialization</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstadd_front`:<sp/>Adding<sp/>nodes<sp/>to<sp/>list<sp/>front</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstsize`:<sp/>List<sp/>size<sp/>calculation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstlast`:<sp/>Finding<sp/>last<sp/>node</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstadd_back`:<sp/>Adding<sp/>nodes<sp/>to<sp/>list<sp/>end</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstdelone`:<sp/>Single<sp/>node<sp/>deletion</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstclear`:<sp/>Complete<sp/>list<sp/>clearing</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstiter`:<sp/>List<sp/>iteration</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`ft_lstmap`:<sp/>List<sp/>transformation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Prerequisites</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Make</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Git</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Project<sp/>Structure</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">xxxxxxxxx/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Parent<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Libft/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Your<sp/>libft<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>libft.h</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>libft.a</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>ft_*.c<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>libft_tests/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>This<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>unity/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Unity<sp/>testing<sp/>framework</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>test_libft.c<sp/><sp/><sp/><sp/>#<sp/>Main<sp/>test<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>Makefile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Build<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>README.md<sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>This<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>testing_guide.md<sp/>#<sp/>Testing<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>└──<sp/>docs/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Additional<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Installation<sp/>Steps</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Clone<sp/>the<sp/>repository:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>#<sp/>From<sp/>your<sp/>parent<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>git<sp/>clone<sp/>https://github.com/Dino-Lu/libft-tests.git<sp/>libft_tests</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Verify<sp/>the<sp/>Makefile<sp/>configuration:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Open<sp/>`libft_tests/Makefile`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Ensure<sp/>`LIBFT_DIR<sp/>=<sp/>../Libft`<sp/>points<sp/>to<sp/>your<sp/>libft<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Default<sp/>configuration<sp/>should<sp/>work<sp/>if<sp/>cloned<sp/>into<sp/>`libft_tests`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>Tests</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>libft_tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Build<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>mandatory<sp/>tests<sp/>only</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>tests<sp/>(mandatory<sp/>+<sp/>bonus)</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>bonus</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Clean<sp/>build<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>clean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Clean<sp/>everything</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>fclean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Rebuild<sp/>everything</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>re</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Test<sp/>Output</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Green<sp/>✓<sp/>indicates<sp/>passed<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Red<sp/>✗<sp/>indicates<sp/>failed<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Detailed<sp/>error<sp/>messages<sp/>for<sp/>failed<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>leak<sp/>reports</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Performance<sp/>metrics</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Available<sp/>Documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Full<sp/>Documentation](docs/html/index.html)<sp/>-<sp/>Complete<sp/>function<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Testing<sp/>Guide](testing_guide.md)<sp/>-<sp/>How<sp/>to<sp/>write<sp/>and<sp/>run<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[GitHub<sp/>Actions](.github/workflows/test.yml)<sp/>-<sp/>CI/CD<sp/>configuration</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Documentation<sp/>Structure</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Function<sp/>specifications</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Test<sp/>case<sp/>examples</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>management<sp/>guidelines</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Performance<sp/>considerations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Best<sp/>practices</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>How<sp/>to<sp/>Contribute</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Fork<sp/>the<sp/>repository</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Create<sp/>a<sp/>feature<sp/>branch<sp/>(`git<sp/>checkout<sp/>-b<sp/>feature/amazing-feature`)</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Commit<sp/>your<sp/>changes<sp/>(`git<sp/>commit<sp/>-m<sp/>&apos;Add<sp/>amazing<sp/>feature&apos;`)</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Push<sp/>to<sp/>the<sp/>branch<sp/>(`git<sp/>push<sp/>origin<sp/>feature/amazing-feature`)</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Open<sp/>a<sp/>Pull<sp/>Request</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Contribution<sp/>Guidelines</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Follow<sp/>existing<sp/>code<sp/>style</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>tests<sp/>for<sp/>new<sp/>features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Ensure<sp/>all<sp/>tests<sp/>pass</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Check<sp/>for<sp/>memory<sp/>leaks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Version<sp/>History</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>v1.0.0</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Initial<sp/>release</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Mandatory<sp/>part<sp/>test<sp/>coverage</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Basic<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GitHub<sp/>Actions<sp/>integration</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>v1.1.0<sp/>(Current)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>bonus<sp/>part<sp/>test<sp/>coverage</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enhanced<sp/>list<sp/>function<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Improved<sp/>memory<sp/>leak<sp/>detection</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>New<sp/>test<sp/>targets<sp/>(test/bonus)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Comprehensive<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Better<sp/>test<sp/>organization</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>MIT<sp/>License<sp/>-<sp/>see<sp/>the<sp/>[LICENSE](LICENSE)<sp/>file<sp/>for<sp/>details.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Acknowledgments</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[Unity<sp/>Testing<sp/>Framework](https://github.com/ThrowTheSwitch/Unity)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[42<sp/>School](https://github.com/42Berlin)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>All<sp/>contributors<sp/>who<sp/>have<sp/>helped<sp/>improve<sp/>this<sp/>test<sp/>suite</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Star<sp/>History</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Star<sp/>History<sp/>Chart](https://api.star-history.com/svg?repos=Dino-Lu/libft-tests&amp;type=Date)](https://star-history.com/#Dino-Lu/libft-tests&amp;Date)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>find<sp/>this<sp/>test<sp/>suite<sp/>helpful,<sp/>please<sp/>consider<sp/>giving<sp/>it<sp/>a<sp/>⭐️<sp/>on<sp/>GitHub!<sp/></highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
