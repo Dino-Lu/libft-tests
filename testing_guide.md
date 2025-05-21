@@ -156,6 +156,7 @@ void test_lstnew(void) {
     TEST_ASSERT_EQUAL_PTR(content, node->content);
     TEST_ASSERT_NULL(node->next);
     
+    free(node->content);
     free(node);
 }
 ```
