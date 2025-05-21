@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/db4/testing__guide_8md" kind="file" language="Markdown">
+    <compoundname>testing_guide.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Building<sp/>Unit<sp/>Tests<sp/>for<sp/>libft</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>guide<sp/>explains<sp/>how<sp/>to<sp/>create<sp/>and<sp/>run<sp/>unit<sp/>tests<sp/>for<sp/>the<sp/>libft<sp/>library<sp/>using<sp/>the<sp/>Unity<sp/>testing<sp/>framework.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Table<sp/>of<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Prerequisites](#prerequisites)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Project<sp/>Structure](#project-structure)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Getting<sp/>Started](#getting-started)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Writing<sp/>Tests](#writing-tests)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Test<sp/>Categories](#test-categories)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Best<sp/>Practices](#best-practices)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Debugging](#debugging)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Common<sp/>Issues](#common-issues)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Resources](#resources)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Prerequisites</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>compiler<sp/>(version<sp/>4.2.1<sp/>or<sp/>higher)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Make<sp/>(version<sp/>3.81<sp/>or<sp/>higher)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unity<sp/>testing<sp/>framework<sp/>(included<sp/>in<sp/>this<sp/>project)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Basic<sp/>understanding<sp/>of<sp/>C<sp/>programming</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Familiarity<sp/>with<sp/>libft<sp/>functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Project<sp/>Structure</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">libft_tests/</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>unity/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Unity<sp/>testing<sp/>framework</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>test_libft.c<sp/><sp/><sp/><sp/><sp/>#<sp/>Main<sp/>test<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Makefile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Build<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>libft_docs.h<sp/><sp/><sp/><sp/><sp/>#<sp/>Function<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>testing_guide.md<sp/>#<sp/>This<sp/>guide</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>docs/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Additional<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Setup<sp/>Your<sp/>Environment**</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Clone<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/Dino-Lu/libft-tests.git<sp/>libft_tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Navigate<sp/>to<sp/>the<sp/>test<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>libft_tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Build<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Basic<sp/>Test<sp/>Structure**</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;unity.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../Libft/libft.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>setUp(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Setup<sp/>code<sp/>(runs<sp/>before<sp/>each<sp/>test)</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>tearDown(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Cleanup<sp/>code<sp/>(runs<sp/>after<sp/>each<sp/>test)</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>test_function_name(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Test<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UNITY_BEGIN();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>RUN_TEST(test_function_name);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>UNITY_END();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Writing<sp/>Tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Test<sp/>Function<sp/>Structure</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>test_function_name_scenario(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Arrange:<sp/>Set<sp/>up<sp/>test<sp/>data</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>*input<sp/>=<sp/>&quot;test&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Act:<sp/>Call<sp/>the<sp/>function<sp/>being<sp/>tested</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>*result<sp/>=<sp/>ft_strdup(input);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Assert:<sp/>Verify<sp/>the<sp/>results</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_NOT_NULL(result);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL_STRING(input,<sp/>result);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Cleanup:<sp/>Free<sp/>allocated<sp/>memory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>free(result);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Available<sp/>Assertions</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Basic<sp/>assertions</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL(expected,<sp/>actual);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_STRING(expected,<sp/>actual);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_NULL(pointer);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_NOT_NULL(pointer);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_TRUE(condition);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_FALSE(condition);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Memory<sp/>assertions</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MEMORY(expected,<sp/>actual,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MEMORY_ARRAY(expected,<sp/>actual,<sp/>element_size,<sp/>length);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>String<sp/>assertions</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_STRING_LEN(expected,<sp/>actual,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_STRING_ARRAY(expected,<sp/>actual,<sp/>length);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Custom<sp/>messages</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MESSAGE(expected,<sp/>actual,<sp/>&quot;Custom<sp/>error<sp/>message&quot;);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Test<sp/>Categories</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Character<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>test_isalpha(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_TRUE(ft_isalpha(&apos;A&apos;));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_TRUE(ft_isalpha(&apos;z&apos;));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_FALSE(ft_isalpha(&apos;1&apos;));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_FALSE(ft_isalpha(&apos;@&apos;));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>String<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>test_strlen(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(5,<sp/>ft_strlen(&quot;Hello&quot;));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(0,<sp/>ft_strlen(&quot;&quot;));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(1,<sp/>ft_strlen(&quot;A&quot;));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>Memory<sp/>Functions</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>test_memset(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>buffer[10];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ft_memset(buffer,<sp/>&apos;A&apos;,<sp/>5);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(&apos;A&apos;,<sp/>buffer[i]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL(&apos;\0&apos;,<sp/>buffer[5]);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>4.<sp/>List<sp/>Functions<sp/>(Bonus)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>test_lstnew(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>*content<sp/>=<sp/>&quot;test&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_list<sp/>*node<sp/>=<sp/>ft_lstnew(content);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_NOT_NULL(node);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_EQUAL_PTR(content,<sp/>node-&gt;content);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TEST_ASSERT_NULL(node-&gt;next);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>free(node);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Best<sp/>Practices</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Test<sp/>Organization</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Group<sp/>related<sp/>tests<sp/>together</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>descriptive<sp/>test<sp/>names</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Follow<sp/>the<sp/>pattern:<sp/>`test_function_name_scenario`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Include<sp/>edge<sp/>cases<sp/>and<sp/>error<sp/>conditions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Memory<sp/>Management</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Always<sp/>free<sp/>allocated<sp/>memory</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>`setUp`<sp/>and<sp/>`tearDown`<sp/>for<sp/>common<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Check<sp/>for<sp/>memory<sp/>leaks<sp/>using<sp/>`valgrind`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Handle<sp/>allocation<sp/>failures</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>Edge<sp/>Cases</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>NULL<sp/>pointers</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Empty<sp/>strings</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Boundary<sp/>values</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Invalid<sp/>inputs</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>limits</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>4.<sp/>Performance<sp/>Considerations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Keep<sp/>tests<sp/>focused<sp/>and<sp/>fast</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Avoid<sp/>unnecessary<sp/>setup/teardown</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>appropriate<sp/>assertions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Consider<sp/>test<sp/>execution<sp/>time</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Debugging</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Using<sp/>Print<sp/>Statements</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>test_function(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;Debug:<sp/>Input:<sp/>%s\n&quot;,<sp/>input);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;Debug:<sp/>Result:<sp/>%s\n&quot;,<sp/>result);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Using<sp/>Unity&apos;s<sp/>Debug<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Enable<sp/>verbose<sp/>output</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>UNITY_INCLUDE_DOUBLE</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>UNITY_DOUBLE_PRECISION<sp/>1e-12</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Use<sp/>custom<sp/>messages</highlight></codeline>
+<codeline><highlight class="normal">TEST_ASSERT_EQUAL_MESSAGE(expected,<sp/>actual,<sp/>&quot;Detailed<sp/>error<sp/>message&quot;);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>Using<sp/>Valgrind</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">valgrind<sp/>--leak-check=full<sp/>./test_libft</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Common<sp/>Issues</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Segmentation<sp/>Faults</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Check<sp/>NULL<sp/>pointer<sp/>dereferences</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Verify<sp/>memory<sp/>allocation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Ensure<sp/>proper<sp/>string<sp/>termination</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Check<sp/>array<sp/>bounds</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Memory<sp/>Leaks</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>`valgrind`<sp/>to<sp/>detect<sp/>leaks</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Free<sp/>all<sp/>allocated<sp/>memory</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Check<sp/>cleanup<sp/>in<sp/>error<sp/>cases</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Verify<sp/>list<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>Test<sp/>Failures</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Compare<sp/>expected<sp/>vs<sp/>actual<sp/>values</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Check<sp/>edge<sp/>cases</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Review<sp/>function<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Verify<sp/>test<sp/>assumptions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Resources</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[Unity<sp/>Documentation](https://github.com/ThrowTheSwitch/Unity)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[libft<sp/>Documentation](docs/html/index.html)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[C<sp/>Unit<sp/>Testing<sp/>Best<sp/>Practices](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Valgrind<sp/>Documentation](https://valgrind.org/docs/manual/manual.html)</highlight></codeline>
+    </programlisting>
+    <location file="testing_guide.md"/>
+  </compounddef>
+</doxygen>
