@@ -13,10 +13,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    
-    - name: Checkout Libft
-      run: |
-        git clone https://github.com/Dino-Lu/Libft.git ../Libft
+        submodules: true
     
     - name: Install dependencies
       run: |
@@ -51,10 +48,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    
-    - name: Checkout Libft
-      run: |
-        git clone https://github.com/Dino-Lu/Libft.git ../Libft
+        submodules: true
     
     - name: Build and test
       run: |
